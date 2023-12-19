@@ -103,7 +103,15 @@ Radi jednostavnosti, pretpostavljamo da su svi tehničari podjednako stručni i 
 
 \subsection{Sistem za automatsko naručivanje delova}
 \label{subsec:sistem_za_automatsko_narucivanje_delova}
-Još jedan bitan deo sistema koji se ne može svrstati u korisnike jeste sistem za automatsko naručivanje delova. Glavna uloga ovog sistema je da naručuje delove za redovne servise. Sistem se pokreće svaki put kada je napravljena promena u rasporedu servisa aviona, i ako je dodat neki novi servis u odnosu na prethodni put, naručuje delove za njega. Delovi koji su potrebni za svaki servis određeni su specifikacijom određenog tipa aviona, sa čime je sistem upoznat. Osim toga, pomaže i u naručivanju delova za vanredni servis, tako što se sistem pokreće na zahtev dobavljača (vidi odeljak \ref{subsec:narucivanje_vanredan_servis}). Delovi se naručuju od firmi sa kojima avio kompanija ima potpisan ugovor. Sistem pravi narudžbenicu na osnovu fiksnog šablona (samo se menja deo koji se naručuje) definisanog u ugovoru sa firmom.
+Još jedan bitan deo sistema koji se ne može svrstati u korisnike jeste sistem za automatsko naručivanje delova. Glavna uloga ovog sistema je da naručuje delove za redovne servise. Sistem se pokreće svaki put kada je napravljena promena u rasporedu servisa aviona, i ako je dodat neki novi servis u odnosu na prethodni put, naručuje delove za njega. Delovi koji su potrebni za svaki servis određeni su specifikacijom određenog tipa aviona, sa čime je sistem upoznat. Osim toga, pomaže i u naručivanju delova za vanredni servis, tako što se sistem pokreće na zahtev dobavljača (vidi odeljak \ref{subsec:narucivanje_vanredan_servis}). Delovi se naručuju od firmi sa kojima avio kompanija ima potpisan ugovor. Sistem pravi narudžbenicu na osnovu fiksnog šablona (samo se menja deo koji se naručuje) definisanog u ugovoru sa firmom. Na slici \ref{fig:bpmn_automatsko_narucivanje} možete videti bolje kako funkcionise ovaj sistem.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=0.55, width = 1.1\textwidth]{Dijagrami/BPMN_Dijagrami/BPMN_automatsko_narucivanje.png}
+\end{center}
+\caption{Sistem za automatsko naručivanje delova}
+\label{fig:bpmn_automatsko_narucivanje}
+\end{figure}
 
 \subsection{Korišćeni alati}
 \label{subsec:korisceni_alati}
