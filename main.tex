@@ -329,7 +329,7 @@ Komunikacija koja se odvija sa dobavljačima je detaljno prikazana na slici \ref
         \begin{enumerate}
             \item Klikom na sekciju $"$Narudžbine$"$ prikazuju mu se sve narudžbenice koje je sistem za automatsko upravljanje napravio.
             \item Klikom na narudžbenicu prikazuju mu se sve informacije o njoj (status narudžbenice, servis za koji je napravljena, vreme stizanja, informacije o naručenom delu itd...).
-            \item Ukoliko je status narudžbenice $"$Isporučena$"$, dostupno mu je dugme $"$Pridruži servisu$"$. Klikom na dugme, delovi se automatski pridružuju servisu za koji su namenjeni i stanje delova se ažurira.
+            \item Ukoliko je status narudžbenice $"$Isporučena$"$, dostupno mu je dugme $"$Pridruži servisu$"$. Klikom na dugme, delovi se automatski pridružuju servisu za koji su namenjeni i stanje delova se ažurira (označava se da je deo pridružen servisu.).
         \end{enumerate}
     \item \textbf{Alternativni tokovi}: /
     \item \textbf{Specijalni uslovi}: Sistem mora pružati tačne i ažurirane informacije o dostupnosti delova. Informacije o narudžbenicama moraju biti transparentne, uključujući procenjeni datum dolaska delova.
@@ -370,6 +370,38 @@ Komunikacija koja se odvija sa upravnikom je detaljno prikazana na slici \ref{fi
 \caption{Dijagram sekvence naručivanja delova}
 \label{fig:ds_narucivanje_delova}
 \end{figure}
+
+\section{Baza podataka}
+\label{sec:baza_podataka}
+
+Na osnovu analize slučajeva upotrebe, prepoznali smo sledeće entitete o kojima je neophodno čuvati informacije u bazi podataka:
+\begin{itemize}
+    \item Zaposleni
+        \begin{itemize}[label=-]
+            \item Upravnici
+            \item Tehničari
+            \item Dobavljači
+        \end{itemize}
+    \item Avion
+    \item Hangar
+    \item Narudžbenica
+    \item Servis
+    \item Raspored
+    \item Deo
+\end{itemize}
+
+Na slici ispod možete videti detaljniji opis baze podataka, predstavljen uz pomoć dijagrama klasa podataka.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=0.6, width = 1.2\textwidth]{Dijagrami/Dijagram_klasa_podataka/Dijagram_klasa_podataka.png}
+\end{center}
+\caption{Dijagram klase podataka}
+\label{fig:dks}
+\end{figure}
+
+Provera oko fonda radnih časova za tehničara je odvojena od baze podataka (u smislu da ne postoji trigger ili procedura koja to radi, već se to reguliše na nivou koda aplikacije). Uz pomoć $schedulera$ SUBP-a, svakog prvog u mesecu se za sve radnike kolona broj radnih sati u mesecu postavlja na nulu.
+
 
 \section{Zaključak}
 \label{sec:zakljucak}
