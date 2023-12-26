@@ -160,6 +160,34 @@ Radi boljeg razumevanja funkcionisanja celog sistema, ispod (Slika \ref{fig:bpmn
 \label{fig:bpmn_dijargram_saradnje}
 \end{figure}
 
+\subsection{Prijavljivanje na sistem}
+\label{subsec:prijavljivanje}
+
+\begin{itemize}
+    \item Kratak opis: Iako ovo nije klasičan slučaj upotrebe, važno je dodatno opisati proceduru samog prijavljivanja na sistem. Ovaj proces se ponavlja svaki put kada se korisnik odjavi sa aplikacije ili se računar ugasi.
+    \item Akteri: Svi korisnici sistema
+    \item Preduslovi: Aplikacija je funkcionalna, a računar je povezan na internet.
+    \item Postuslovi: Korisnik se prijavio na sistem i prikazan mu je odgovarajući interfejs.
+    \item Osnovni tok:
+        \begin{enumerate}
+            \item Korisnik unosi svoje korisničko ime (koje predstavlja njegov ID) i svoju šifru.
+            \item Ako je šifra ispravna, korisniku se prikazuje odgovarajući interfejs.
+        \end{enumerate}
+    \item Alternativni tokovi:
+     \begin{enumerate}
+            \item  U koliko je lozinka nije dobra, dobija obavestenje o tome i trazi mu se ponovan unos lozinke.
+    \end{enumerate}
+    \item Specijalni uslovi: /
+\end{itemize}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=0.55, width = 1.1\textwidth]{Dijagrami/Dijagrami_sekvence/Dijagram_sekvence_prijavljivanje_na_sistem.png}
+\end{center}
+\caption{Prijavljivanje na sistem}
+\label{fig:prijavljivanje}
+\end{figure}
+
 \subsection{Slučaj upotrebe: Raspored tehničara}
 \label{subsec:raspored_tehnicara}
 \begin{itemize}
@@ -244,6 +272,14 @@ Slike \ref{fig:ds_raspored_tehnicara}. i \ref{fig:da_raspored_tehnicara} predsta
         \end{itemize}
     \item \textbf{Specijalni uslovi}: Prilikom obavljanja $"$hijerarhijski jačeg$"$ servisa ažurira se i vreme servisa za sve slabije tipove servisa.
 \end{itemize}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=0.55, width = 1.1\textwidth]{Dijagrami/Dijagrami_sekvence/Dijagram_sekvence_redovnog_servisa.png}
+\end{center}
+\caption{Slučaj upotrebe: Planiranje održavanja aviona - redovan servis}
+\label{fig:ds_redovan_servis}
+\end{figure}
 
 \subsection{Slučaj upotrebe: Planiranje održavanja aviona - vanredni servis}
 \label{subsec:vanredni_servis}
