@@ -363,7 +363,7 @@ Komunikacija koja se odvija sa dobavljačima je detaljno prikazana na slici \ref
     \item \textbf{Kratak opis}: Sistem omogućava tehničarima da vide raspored servisa i informacije o servisu. Tehničar servisira onaj avion čiji je servis zakazan za vreme njegovog radnog vremena u hangaru u kom je on raspoređen.
     \item \textbf{Akteri}: Tehničar
     \item \textbf{Preduslovi}: Sistem je aktivan. Raspored servisa je napravljen i dostupan tehničarima.
-    \item \textbf{Postuslovi}: Serviser je uspešno obavio servis aviona i uneo servis u evidenciju.
+    \item \textbf{Postuslovi}: Serviser je uspešno obavio servis aviona i uneo servis u evidenciju. Delovi korišćeni na servisu se brišu iz baze.
     \item \textbf{Osnovni tok}:
         \begin{enumerate}
             \item Tehničar klikom na sekciju $"$Raspored servisa$"$ vidi sve zakazane servise. Klikom na određen servis vidi dodatne informacije za taj servis (tip aviona, proizvođač, godina, uputstva od proizvođača).
@@ -371,6 +371,7 @@ Komunikacija koja se odvija sa dobavljačima je detaljno prikazana na slici \ref
             \item Kada je servis završen, klikom na dugme $"$Završi servis$"$ otvara se prozor u kome treba da unese informacije o servisu koje će biti sačuvane kao servisna istorija aviona.
             \item U polju $"$Urađeno na servisu$"$ navodi sve što je urađeno u tom servisu. Polja kao što su tip servisa, datum i vreme servisa su unapred popunjena.
             \item Klikom na dugme $"$Zapamti servis$"$, servis se čuva u servisnoj istoriji i status mu je promenje u $"$Završen$"$.
+            \item Nakon toga, unosi šifre delova koje je koristio u polje $"$Korišćeni delovi$"$, jednu ispod druge, pri čemu mu $"$autocomplete$"$ nudi opcije.
         \end{enumerate}
     \item \textbf{Alternativni tokovi:}
         \begin{enumerate}
@@ -393,12 +394,12 @@ Komunikacija koja se odvija sa dobavljačima je detaljno prikazana na slici \ref
     \item \textbf{Kratak opis}: Ovaj slučaj upotrebe fokusira se na upravljanje zalihama delova za avion od strane dobavljača, kako bi se osigurala dostupnost potrebnih komponenti za redovna servisiranja aviona. Sistem za automatsko naručivanje delova, osmišljen je za praćenje, upravljanje i obezbeđivanje delova potrebnih za redovne servise.
     \item \textbf{Akteri}: Dobavljač
     \item \textbf{Preduslovi}: Postojanje sistema za automatsko upravljanje delovima. Dobavljač vidi rasporedu redovnih servisa i informacije o trenutnom stanju zaliha. Sistem je aktivan.
-    \item \textbf{Postuslovi}: Ažurirane informacije o zalihama za sve redovne servise. U Rasporedu servisa je oznaceno da su delovi za taj servis spremni.
+    \item \textbf{Postuslovi}: Ažurirane informacije o zalihama za sve redovne servise. 
     \item \textbf{Osnovni tok}:
         \begin{enumerate}
             \item Klikom na sekciju $"$Narudžbine$"$ prikazuju mu se sve narudžbenice koje je sistem za automatsko upravljanje napravio.
             \item Klikom na narudžbenicu prikazuju mu se sve informacije o njoj (status narudžbenice, servis za koji je napravljena, vreme stizanja, informacije o naručenom delu itd...).
-            \item Ukoliko je status narudžbenice $"$Isporučena$"$, dostupno mu je dugme $"$Pridruži servisu$"$. Klikom na dugme, delovi se automatski pridružuju servisu za koji su namenjeni i stanje delova se ažurira (označava se da je deo pridružen servisu.).
+            \item Ukoliko je status narudžbenice $"$Isporučena$"$, dostupno mu je dugme $"$Pridruži servisu$"$. Klikom na dugme, delovi se automatski pridružuju servisu za koji su namenjeni i stanje delova se ažurira (zapisuje se u bazi podataka da je deo pridruzen servisu).
         \end{enumerate}
     \item \textbf{Alternativni tokovi}: /
     \item \textbf{Specijalni uslovi}: Sistem mora pružati tačne i ažurirane informacije o dostupnosti delova. Informacije o narudžbenicama moraju biti transparentne, uključujući procenjeni datum dolaska delova.
@@ -589,9 +590,4 @@ Zbog ograničenog vremena i broja članova tima, kao i složenosti problema koji
     \item Mogućnost dobijanja različitih vrsta statistika vezanih za servisiranje aviona. Ove statistike bi bile korisne za otkrivanje stvari kao što su najčešćih uzroci kvara na avionima (što za odredjen tip aviona, što generalno).
 \end{itemize}
 
-
-\addcontentsline{toc}{section}{Literatura}
-\appendix
-\bibliography{seminarski} 
-\bibliographystyle{plain}
 \end{document}
