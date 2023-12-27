@@ -72,7 +72,7 @@
 
 \section{Uvod}
 \label{sec:uvod}
-U savremenoj avioindustriji, ključni faktor za uspeh svake avio kompanije leži u osiguranju bezbednih letova i održavanju redovnog avio-saobraćaja. U postizanju ovih ciljeva, efikasno i redovno održavanje aviona ima presudnu ulogu. Podaci pokazuju da su kvarovi na avionima uzrok za oko XXXX\% otkazanih letova ili letova sa značajnim kašnjenjima. Ovi neplanirani problemi donose avio-kompanijama velike troškove. Međutim, za razliku od faktora na koje se ne može uticati, kao što su vremenski uslovi ili štrajkovi aerodromskog osoblja, detaljnim planiranjem održavanja aviona moguće je značajno umanjiti ove troškove.
+U savremenoj avioindustriji, ključni faktor za uspeh svake avio kompanije leži u osiguranju bezbednih letova i održavanju redovnog avio-saobraćaja. U postizanju ovih ciljeva, efikasno i redovno održavanje aviona ima presudnu ulogu. Podaci pokazuju da su kvarovi na avionima uzrok za približno trećinu otkazanih letova ili letova sa značajnim kašnjenjima. Ovi neplanirani problemi donose avio-kompanijama velike troškove. Međutim, za razliku od faktora na koje se ne može uticati, kao što su vremenski uslovi ili štrajkovi aerodromskog osoblja, detaljnim planiranjem održavanja aviona moguće je značajno umanjiti ove troškove i povećati bezbednost putnika.
 
 Razlikujemo dva osnovna tipa servisa: redovni i vanredni. Redovni servisi se dalje dele na tri različita podtipa:
 \begin{itemize}
@@ -115,8 +115,41 @@ Još jedan bitan deo sistema koji se ne može svrstati u korisnike jeste sistem 
 
 \subsection{Korišćeni alati}
 \label{subsec:korisceni_alati}
+Tokom izrade rada korišćeni su sledeći dijagrami:
+    \begin{itemize}
+        \item BPMN (\textit{Business Proccess Model and Notation}) dijagrami
+        \item UML (\textit{Unified Modeling Language}) dijagrami:
+            \begin{enumerate}
+                \item Strukturni dijagram:
+                    \begin{itemize}
+                        \item Dijagram isporuke
+                        \item Dijagram klasa podataka
+                        \item Dijagram komponenti
+                    \end{itemize}
+                \item Dijagram ponašanja:
+                    \begin{itemize}
+                        \item Dijagram slučaja upotrebe
+                        \item Dijagram aktivnosti
+                        \item Dijagram sekvenci
+                    \end{itemize}
+            \end{enumerate}
+        \item DFD (\textit{Data Flow Diagram}):
+            \begin{enumerate}
+                \item Dijagram konteksta
+                \item Dijagram toka podataka nivoa 0
+            \end{enumerate}
+    \end{itemize}
 
-OVDE TREBA DA DODAMO ALATE KOJE SMO KORISITILI KADA ZAVRSIMO CEO RAD
+Za izradu ovih dijagrama korišćeni su sledeći alati:
+    \begin{itemize}
+        \item Visual Paradigm Online Edition
+        \item Visual Paradigm Community Edition
+        \item WebSequenceDiagrams
+    \end{itemize}
+
+Za izradu korisničkog interfejsa korišćeni su HTML i CSS.
+
+\pagebreak
 
 \section{Dijagrami toka podataka}
 \label{sec:dijagrami_toka_podataka}
@@ -545,32 +578,20 @@ U ovom poglavlju će biti prikazan prototip korisničkog interfejsa.
 \section{Zaključak}
 \label{sec:zakljucak}
 
-Ovde pišem zaključak. 
-Ovde pišem zaključak. 
-Ovde pišem zaključak. 
-Ovde pišem zaključak. 
-Ovde pišem zaključak. 
-Ovde pišem zaključak. 
-Ovde pišem zaključak. 
-Ovde pišem zaključak. 
-Ovde pišem zaključak. 
-Ovde pišem zaključak. 
-Ovde pišem zaključak. 
-Ovde pišem zaključak. 
+U ovom projektu je razvijen predlog informacionog sistema za avio-servise unutar avio-kompanija. Kompanije trpe značajne gubitke zbog neefikasnih i nedovoljno optimizovanih procesa održavanja aviona. Naš sistem ne samo da može potencijalno smanjiti gubitke kompanije, već i unaprediti bezbednost putnika kroz redovno i detaljno servisiranje aviona.
+
+\subsection{Dalji razvoj sistema}
+\label{subsec:dalji_razvoj}
+
+Zbog ograničenog vremena i broja članova tima, kao i složenosti problema koji rešavamo, ovaj projekat obuhvata samo ključne odnosno centralne slučajeve upotrebe vezane za avio-servise. U budućnosti je planirano raditi na sledećim funkcionalnostima:
+\begin{itemize}
+    \item Rešavanje problema kada se avion pokvari na aerodromu u kom nema servisa njegove avio-kompanije. Ova izmena eksponencijalno povećava složenost samog sistema.
+    \item Mogućnost dobijanja različitih vrsta statistika vezanih za servisiranje aviona. Ove statistike bi bile korisne za otkrivanje stvari kao što su najčešćih uzroci kvara na avionima (što za odredjen tip aviona, što generalno).
+\end{itemize}
 
 
 \addcontentsline{toc}{section}{Literatura}
 \appendix
 \bibliography{seminarski} 
 \bibliographystyle{plain}
-
-\appendix
-\section{Dodatak}
-Ovde pišem dodatne stvari, ukoliko za time ima potrebe.
-Ovde pišem dodatne stvari, ukoliko za time ima potrebe.
-Ovde pišem dodatne stvari, ukoliko za time ima potrebe.
-Ovde pišem dodatne stvari, ukoliko za time ima potrebe.
-Ovde pišem dodatne stvari, ukoliko za time ima potrebe.
-
-
 \end{document}
