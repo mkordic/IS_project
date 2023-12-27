@@ -438,6 +438,34 @@ Na slici ispod možete videti detaljniji opis baze podataka, predstavljen uz pom
 
 Provera oko fonda radnih časova za tehničara je odvojena od baze podataka (u smislu da ne postoji trigger ili procedura koja to radi, već se to reguliše na nivou koda aplikacije). Uz pomoć $schedulera$ SUBP-a, svakog prvog u mesecu se za sve radnike kolona broj radnih sati u mesecu postavlja na nulu.
 
+\section{Arhitektura informacionog sistema}
+\label{sec:arhitektura}
+Pažljivo razmatrajući funkcionalne, nefunkcionalne i bezbednoste zahteve informacionog sistema, odlučili smo se za slojevitu klijent-server arhitekturu. Lakši razvoj i održavanje, kao i povećana bezbednost (mogućnost implementiranja različitih bezbednosnih mehanizama na svakom od slojeva) su jedni od glavnih razloga zašto smo se opredelili baš za slojevitu arhitekturu. Razlikujemo sledeća tri sloja:
+\begin{enumerate}
+    \item Prezentacioni sloj - Najviši sloj, omogućava prikaz korisničkog interfejsa i njegovu odzivnost. Odgovoran je za unos i prikaz podataka. Korisnički interfejs je različit za različite korisnike, što rezultira različitim funkcionalnostima. Tehnologije koje se koriste na ovom sloju su: Java, JavaFX.
+    \item Logički sloj - Srednji sloj, u njemu se nalazi sva logika aplikacije. Služi kao posrednik između prezentacionog i sloja podataka. $"$Preuređuje$"$ podatke koje dobija od jedne strane, tako da su pogodni za prikaz, obradu ili čuvanje na drugoj strani. Tehnologija koja se koristi na ovom sloju je Java.
+    \item Sloj podataka - Najvisi sloj, na kome se nalazi relacioni SUBP i relaciona baza. Konkretan SUBP na ovom sloju je MySQL.
+\end{enumerate}
+
+Aplikacija je tipa desktop aplikacije i biće raspoređena na tri računara: jedan klijentski i dva serverska računara. Jedan od serverskih računara će biti aplikativni server, dok će drugi služiti kao server baze podataka. Za fizičko razdvajanje aplikativnog servera i servera baze podataka smo se odlučili pre svega zbog boljih performansi. Odvajanje baze podataka od aplikativnog servera omogućava svakom serveru da koristi sve resurse samo za posao koji obavlja. Aplikacija koja se instalira na klijentskom računaru ima samo korisnički interfejs i deo logike koji omogućava korišćenje istog, dok će veći deo logičkog sloja biti na aplikativnom serveru. Ovu odluku opravdavamo lakšim održavanjem, jer prilikom promene u logici aplikacije nije uvek neophodno ažurirati svakog klijenta, kao i povećanom bezbednošću. Centralizovanje logike na backend serveru omogućava bolju kontrolu nad podacima i pristupom. Na serveru baze podataka koristićemo MySQL SUBP zbog njegovih performansi i jer je open-source softver koji je besplatan, i ima veliku zajednicu korisnika.
+
+Na slikama \ref{fig:dijagram_komponenti_sistema} i \ref{fig:isporuka} mozete videti dijagram komponenti sistema i dijagram isporuke. 
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=0.6, width = 1.2\textwidth]{Dijagrami/Dijagrami_komponenti_sistema/Dijagram_komponenti_sistema.png}
+\end{center}
+\caption{Dijagram komponenti sistema}
+\label{fig:dijagram_komponenti_sistema}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=0.6, width = 1\textwidth]{Dijagrami/Dijagrami_isporuke/Dijagram_isporuke.png}
+\end{center}
+\caption{Dijagram isporuke}
+\label{fig:isporuka}
+\end{figure}
 
 \section{Zaključak}
 \label{sec:zakljucak}
