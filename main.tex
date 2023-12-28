@@ -75,7 +75,7 @@ Razlikujemo dva osnovna tipa servisa: redovni i vanredni. Redovni servisi se dal
 \begin{itemize}
     \item dnevni - razmak između dva dnevna servisa je maksimalno 48h
     \item nedeljni - razmak između dva nedeljna servisa je maksimalno jedna nedelja
-    \item ciklusni - ovi servisi se održavaju kada avion dođe do određenog broja ciklusa motora (jedno paljenje i gašenje motora predstavlja jedan ciklus) ili nakon određenog broja sati rada morota
+    \item ciklusni - ovi servisi se održavaju kada avion dođe do određenog broja ciklusa motora (jedno paljenje i gašenje motora predstavlja jedan ciklus) ili nakon određenog broja sati rada motora.
 \end{itemize}
 
 Vanredni servisi su oni servisi koji se održavaju nakon što senzori aviona očitaju neku grešku na motoru ili nekoj drugoj komponenti. Oni zahtevaju hitno reagovanje kako bi se avion što pre vratio u saobraćaj. 
@@ -88,15 +88,15 @@ U ovom radu će biti prikazani i detaljno opisani samo osnovni (i uprošćeni) p
 
 \subsection{Korisnici sistema}
 \label{subsec:korisnici_sistema}
-Svi korisnici ovog sistema su zaposleni u servisu za avione. Razlikujemo tri razlicita korisnika:
+Svi korisnici ovog sistema su zaposleni u servisu za avione. Razlikujemo tri različita korisnika:
 \begin{itemize}
-    \item Upravnik(Šef smene) - zaduzen je za pravljenje rasporeda servisa aviona, kao i za pravljenje rasporeda radnog vremena tehnicara
-    \item Tehničar - zaduzen je za odrzavanje aviona, kao i za vodjenje servisne istorije
-    \item Dobavljač - vodi racuna o dostupnosti rezervnih delova i narucuje delove za vanredne servise
+    \item Upravnik(Šef smene) - zaduzen je za pravljenje rasporeda servisa aviona, kao i za pravljenje rasporeda radnog vremena tehničara.
+    \item Tehničar - zaduzen je za održavanje aviona, kao i za vođenje servisne istorije.
+    \item Dobavljač - vodi računa o dostupnosti rezervnih delova i naručuje delove za vanredne servise.
 \end{itemize}
 Tehničara i dobavljača ima više u jednoj smeni, ali postoji samo jedan upravnik.
 
-Radi jednostavnosti, pretpostavljamo da su svi tehničari podjednako stručni i ne pravimo razliku izmedju različitih podtipova (limari, električari itd.). Ova specijalizacija bi nepotrebno zakomplikovala sistem, a ne bi povećala sam kvalitet istog.
+Radi jednostavnosti, pretpostavljamo da su svi tehničari podjednako stručni i ne pravimo razliku izmedju različitih podtipova (limari, električari itd...). Ova specijalizacija bi nepotrebno zakomplikovala sistem, a ne bi povećala sam kvalitet istog.
 
 \subsection{Sistem za automatsko naručivanje delova}
 \label{subsec:sistem_za_automatsko_narucivanje_delova}
@@ -193,7 +193,7 @@ Radi boljeg razumevanja funkcionisanja celog sistema, ispod (Slika \ref{fig:bpmn
 
 \begin{itemize}
     \item Kratak opis: Iako ovo nije klasičan slučaj upotrebe, važno je dodatno opisati proceduru samog prijavljivanja na sistem. Ovaj proces se ponavlja svaki put kada se korisnik odjavi sa aplikacije ili se računar ugasi.
-    \item Akteri: Svi korisnici sistema
+    \item Akteri: Svi korisnici sistema.
     \item Preduslovi: Aplikacija je funkcionalna, a računar je povezan na internet.
     \item Postuslovi: Korisnik se prijavio na sistem i prikazan mu je odgovarajući interfejs.
     \item Osnovni tok:
@@ -238,7 +238,7 @@ Radi boljeg razumevanja funkcionisanja celog sistema, ispod (Slika \ref{fig:bpmn
     \item \textbf{Specijalni uslovi}: Tehničar se ne može rasporediti ukoliko nije dostupan. Tehničar nije dostupan ukoliko mu je ispunjen maksimalan broj radnih sati za taj mesec ili ako je na odmoru/bolovanju. Tehničari vide raspored do poslednjeg popunjenog dana.
 \end{itemize}
 
-Slike \ref{fig:ds_raspored_tehnicara}. i \ref{fig:da_raspored_tehnicara} predstavljaju prateće dijagrame za ovaj slučaj upotrebe.
+Slike \ref{fig:ds_raspored_tehnicara} i \ref{fig:da_raspored_tehnicara} predstavljaju prateće dijagrame za ovaj slučaj upotrebe.
 \begin{figure}[H]
 \begin{center}
 \includegraphics[scale=0.5, width = 1.1\textwidth]{Dijagrami/Dijagrami_sekvence/Dijagram_sekvence_rasporeda_tehničara.png}
@@ -263,7 +263,7 @@ Slike \ref{fig:ds_raspored_tehnicara}. i \ref{fig:da_raspored_tehnicara} predsta
 \label{fig:da_raspored_tehnicara}
 \end{figure}
 
-\subsection{Slučaj upotrebe: Planiranje održavanja aviona - redovni servis}
+\subsection{Slučaj upotrebe: Planiranje održavanja aviona - \\redovni servis}
 \label{subsec:redovan_servis}
 \begin{itemize}
     \item \textbf{Kratak opis}: Sistem omogućava upravi da pravi planove redovnih servisa aviona.
@@ -309,7 +309,7 @@ Slike \ref{fig:ds_raspored_tehnicara}. i \ref{fig:da_raspored_tehnicara} predsta
 \label{fig:ds_redovan_servis}
 \end{figure}
 
-\subsection{Slučaj upotrebe: Planiranje održavanja aviona - vanredni servis}
+\subsection{Slučaj upotrebe: Planiranje održavanja aviona - \\vanredni servis}
 \label{subsec:vanredni_servis}
 \begin{itemize}
     \item \textbf{Kratak opis}: Sistem omogućava upravi da rukovodi vanrednim servisima aviona.
@@ -358,19 +358,19 @@ Komunikacija koja se odvija sa dobavljačima je detaljno prikazana na slici \ref
     \item \textbf{Kratak opis}: Sistem omogućava tehničarima da vide raspored servisa i informacije o servisu. Tehničar servisira onaj avion čiji je servis zakazan za vreme njegovog radnog vremena u hangaru u kom je on raspoređen.
     \item \textbf{Akteri}: Tehničar
     \item \textbf{Preduslovi}: Sistem je aktivan. Raspored servisa je napravljen i dostupan tehničarima.
-    \item \textbf{Postuslovi}: Serviser je uspešno obavio servis aviona i uneo servis u evidenciju. Delovi korišćeni na servisu se brišu iz baze.
+    \item \textbf{Postuslovi}: Tehničar je uspešno obavio servis aviona i uneo servis u evidenciju. Delovi korišćeni na servisu se brišu iz baze.
     \item \textbf{Osnovni tok}:
         \begin{enumerate}
             \item Tehničar klikom na sekciju $"$Raspored servisa$"$ vidi sve zakazane servise. Klikom na određen servis vidi dodatne informacije za taj servis (tip aviona, proizvođač, godina, uputstva od proizvođača).
             \item Kada dođe vreme za određen servis, sistem automatski postavlja status servisa na $"$U toku$"$.
             \item Kada je servis završen, klikom na dugme $"$Završi servis$"$ otvara se prozor u kome treba da unese informacije o servisu koje će biti sačuvane kao servisna istorija aviona.
             \item U polju $"$Urađeno na servisu$"$ navodi sve što je urađeno u tom servisu. Polja kao što su tip servisa, datum i vreme servisa su unapred popunjena.
-            \item Klikom na dugme $"$Zapamti servis$"$, servis se čuva u servisnoj istoriji i status mu je promenje u $"$Završen$"$.
+            \item Klikom na dugme $"$Zapamti servis$"$, servis se čuva u servisnoj istoriji i status mu je promenjen u $"$Završen$"$.
             \item Nakon toga, unosi šifre delova koje je koristio u polje $"$Korišćeni delovi$"$, jednu ispod druge, pri čemu mu $"$autocomplete$"$ nudi opcije.
         \end{enumerate}
     \item \textbf{Alternativni tokovi:}
         \begin{enumerate}
-            A1) Ako je polje $"$Uradjeno na servisu$"$ ili $"$Korišćeni delovi$"$ prazno, a klikne se na dugme $"$Zapamti servis$"$, dobija se poruka o grešci.\\
+            A1) Ako je polje $"$Urađeno na servisu$"$ ili $"$Korišćeni delovi$"$ prazno, a klikne se na dugme $"$Zapamti servis$"$, dobija se poruka o grešci.\\
             A2) Neki od unetih delova nisu pronađeni u bazi podataka, što rezultuje porukom o grešci.
         \end{enumerate}
     \item \textbf{Specijalni uslovi}: /
@@ -389,7 +389,7 @@ Komunikacija koja se odvija sa dobavljačima je detaljno prikazana na slici \ref
 \begin{itemize}
     \item \textbf{Kratak opis}: Ovaj slučaj upotrebe fokusira se na upravljanje zalihama delova za avion od strane dobavljača, kako bi se osigurala dostupnost potrebnih komponenti za redovna servisiranja aviona. Sistem za automatsko naručivanje delova, osmišljen je za praćenje, upravljanje i obezbeđivanje delova potrebnih za redovne servise.
     \item \textbf{Akteri}: Dobavljač
-    \item \textbf{Preduslovi}: Postojanje sistema za automatsko upravljanje delovima. Dobavljač vidi rasporedu redovnih servisa i informacije o trenutnom stanju zaliha. Sistem je aktivan.
+    \item \textbf{Preduslovi}: Postojanje sistema za automatsko upravljanje delovima. Dobavljač vidi raspored redovnih servisa i informacije o trenutnom stanju zaliha. Sistem je aktivan.
     \item \textbf{Postuslovi}: Ažurirane informacije o zalihama za sve redovne servise. 
     \item \textbf{Osnovni tok}:
         \begin{enumerate}
